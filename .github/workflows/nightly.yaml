@@ -8,6 +8,7 @@ jobs:
   publish-deutschland-main:
     uses: ./.github/workflows/publish.yaml
     with:
+      context: .
       registry: bikenow.vkw.tu-dresden.de
       image: ${{ github.repository }}-deutschland
       branch: main
@@ -18,6 +19,7 @@ jobs:
   publish-deutschland-stable:
     uses: ./.github/workflows/publish.yaml
     with:
+      context: .
       registry: bikenow.vkw.tu-dresden.de
       image: ${{ github.repository }}-deutschland
       branch: stable

@@ -12,6 +12,7 @@ jobs:
   publish-deutschland:
     uses: ./.github/workflows/publish.yaml
     with:
+      context: .
       registry: bikenow.vkw.tu-dresden.de
       image: ${{ github.repository }}-deutschland
       branch: ${{ github.ref }}
