@@ -1,0 +1,26 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  publish-deutschland-main:
+    uses: ./.github/workflows/publish.yaml
+    with:
+      registry: bikenow.vkw.tu-dresden.de
+      image: ${{ github.repository }}-deutschland
+      branch: main
+    secrets:
+      NEXUS_DOCKER_PUB_USERNAME: ${{ secrets.NEXUS_DOCKER_PUB_USERNAME }}
+      NEXUS_DOCKER_PUB_PASSWORD: ${{ secrets.NEXUS_DOCKER_PUB_PASSWORD }}
+
+  publish-deutschland-stable:
+    uses: ./.github/workflows/publish.yaml
+    with:
+      registry: bikenow.vkw.tu-dresden.de
+      image: ${{ github.repository }}-deutschland
+      branch: stable
+    secrets:
+      NEXUS_DOCKER_PUB_USERNAME: ${{ secrets.NEXUS_DOCKER_PUB_USERNAME }}
+      NEXUS_DOCKER_PUB_PASSWORD: ${{ secrets.NEXUS_DOCKER_PUB_PASSWORD }}
