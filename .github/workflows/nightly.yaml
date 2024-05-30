@@ -2,7 +2,10 @@ name: Nightly
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+  # Download of the Photon DB is super slow (graphhopper server is the bottleneck).
+  # We don't want to block our CI/CD pipeline with this and daily updates are also not really required.
+  # Therefore, we switch to a weekly update cycle (and a time where we probably don't need our CI/CD pipleline anyway).
+    - cron: '0 7 * * 7'
 
 jobs:
   publish-deutschland-main:
