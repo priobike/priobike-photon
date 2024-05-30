@@ -5,7 +5,7 @@ name: Nightly
 # Therefore, we switch to a weekly update cycle (and a time where we probably don't need our CI/CD pipleline anyway).
 on:
   schedule:
-    - cron: '0 7 * * 7'
+    - cron: '0 7 * * 0'
 
 jobs:
   publish-deutschland-main:
