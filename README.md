@@ -1,4 +1,4 @@
-# Photon
+# priobike-photon
 
 This repo contains a Dockerfile to self host a [Photon](https://github.com/komoot/photon) instance. Photon provides geocoding and search as you type functionality.
 
